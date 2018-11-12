@@ -1,7 +1,8 @@
 package sort
 
 import (
-
+  //"fmt"
+  "time"
 )
 
 type Generic interface{}
@@ -46,18 +47,29 @@ func Swap(index1 int, index2 int, list []interface{}) []interface{} {
 }
 
 func BubbleSort(list []interface{}) []interface{} {
-  passCount := 0
   var lastPass, currPass []interface{}
   tempList := list
-  for !AllEqual(lastPass, currPass) && currPass != nil {
-    for i:=0; i + 1 < len(list) - 1; i++ {
+  for !AllEqual(lastPass, currPass) || currPass == nil {
+    for i:=0; i + 1 < len(list); i++ {
         if IsGreaterThan(tempList[i], tempList[i+1]) {
           tempList = Swap(i, i+1, tempList)
         }
     }
-    passCount += 1
     lastPass = currPass
     currPass = tempList
+  }
+  return tempList
+}
+
+func SleepInsert(list *[]float64, value float64, t time.Duration) {
+  time.Sleep(t)
+  *list = append(*list, value)
+}
+
+func SleepSort(list []float64) []float64 {
+  var tempList []float64
+  for _, v := range list {
+    go SleepInsert(&tempList, v, time.Duration(int64(v*1000)))
   }
   return tempList
 }
