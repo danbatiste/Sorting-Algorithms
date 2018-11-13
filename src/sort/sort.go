@@ -57,9 +57,12 @@ func SleepInsert(list *[]float64, value float64, t time.Duration) {
 }
 
 func SleepSort(list []float64) []float64 {
-  var tempList []float64
+  vmax := 0.0
+  tempList := []float64{}
   for _, v := range list {
-    go SleepInsert(&tempList, v, time.Duration(int64(v*1000)))
+    if v > vmax { vmax = v }
+    go SleepInsert(&tempList, v, time.Duration(int64(v))*time.Millisecond)
   }
+  time.Sleep(time.Duration(int64(vmax))*time.Millisecond)
   return tempList
 }
