@@ -1,7 +1,7 @@
 package sort
 
 import (
-
+  "./tools"
 )
 
 
@@ -9,10 +9,10 @@ import (
 func BubbleSort(list []float64) []float64 {
   var lastPass, currPass []float64
   tempList := list
-  for !AllEqual(lastPass, currPass) || currPass == nil {
+  for !tools.AllEqual(lastPass, currPass) || currPass == nil {
     for i:=0; i + 1 < len(list); i++ {
         if tempList[i] > tempList[i+1] {
-          tempList = Swap(i, i+1, tempList)
+          tempList = tools.Swap(i, i+1, tempList)
         }
     }
     lastPass = currPass

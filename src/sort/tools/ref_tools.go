@@ -7,13 +7,12 @@ import (
 
 //  Raises a line from 0 upwards. If a value is above the line,  it is added
 //  to the slice.
-func SpaghettiInsert(list *[]float64, value float64, h float64) {
-  done := false
-  increment := 0.1
-  for h = 0; !done; h = h + increment {
-    if value > h {
+func SpaghettiInsert(list *[]float64, done *bool, value float64, h *float64) {
+  *done = false
+  for !*done {
+    if value > *h {
       *list = append(*list, value)
-      done = true
+      *done = true
     }
   }
 }
