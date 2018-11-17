@@ -12,21 +12,23 @@ func SleepSort(list []float64) []float64 {
   tempList := []float64{}
   for _, v := range list {
     if v > vmax { vmax = v }
-    go SleepInsert(&tempList, v, time.Duration(int64(v))*time.Millisecond)
+    go ref_tools.SleepInsert(&tempList, v, time.Duration(int64(v))*time.Millisecond)
   }
   time.Sleep(time.Duration(int64(vmax))*time.Millisecond)
   return tempList
 }
 
 
-func LineSort(list []float64) []float64 {
+func SpaghettiSort(list []float64) []float64 {
   tempList := []float64{}
   var allDone []bool
+  increment := 0.1
+  h := 0
   for i, v := range list {
-    allDone [i] = go LineInsert(&tempList, v, h)
+    go ref_tools.SpaghettiInsert(&tempList, v, h)
   }
-  for !allTrue(allDone) {
-    ...
+  for !tools.AllTrue(allDone) {
+    pass
   }
   return tempList
 }
