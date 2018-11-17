@@ -6,7 +6,6 @@ import (
   //"time"
 )
 
-
 func main() {
   list1 := []float64{1,10,13,11,100,51,3,4}
 
