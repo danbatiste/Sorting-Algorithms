@@ -10,7 +10,7 @@ import (
 func SpaghettiInsert(list *[]float64, done *bool, value float64, h *float64) {
   *done = false
   for !*done {
-    if value > *h {
+    if value <= *h {
       *list = append(*list, value)
       *done = true
     }

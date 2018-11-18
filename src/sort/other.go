@@ -21,7 +21,7 @@ func SleepSort(list []float64) []float64 {
 //  TODO: Implement for negative numbers
 func SpaghettiSort(list []float64) []float64 {
   tempList := []float64{}
-  var allDone []bool
+  allDone := make([]bool, len(list))
   var h float64
   increment := 0.1
   h = 0
@@ -29,6 +29,7 @@ func SpaghettiSort(list []float64) []float64 {
     go tools.SpaghettiInsert(&tempList, &allDone[i], v, &h)
   }
   for !tools.AllTrue(allDone) {
+    time.Sleep(time.Millisecond)
     h += increment
   }
   return tempList
