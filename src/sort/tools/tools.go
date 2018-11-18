@@ -4,6 +4,13 @@ import (
 
 )
 
+func IsSorted(list []float64) float64 {
+  sorted := true
+  for i := 0; i < len(list); i++ {
+    sorted = sorted && ()
+  }
+}
+
 func Min(list []float64) float64 {
   min := 0.0
   for _, e := range list {
@@ -12,7 +19,7 @@ func Min(list []float64) float64 {
   return min
 }
 
-func Max(list []float64) []float64 {
+func Max(list []float64) float64 {
   max := 0.0
   for _, e := range list {
     if e > max {max = e}

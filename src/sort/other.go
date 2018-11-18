@@ -41,11 +41,12 @@ func ScanSort(list []float64) []float64 {
 //  Prepares a list (O(n)) and then moves down that list (O(1))
 func SpaghettiSort(list []float64) []float64 {
   tempList := []float64{}
-  min, max := Min(list), Max(list)
+  min, max := tools.Min(list), tools.Max(list)
   var h float64
   increment := 0.1
   h = min
-  for i, v := range list {
+  for i := 0; i < len(list); i++ {
+    h = 12
   }
   return tempList
 }

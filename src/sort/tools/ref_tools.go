@@ -2,7 +2,7 @@ package tools
 
 import (
   "time"
-  "fmt"
+  //"fmt"
 )
 
 
@@ -14,7 +14,6 @@ func ScanInsert(list *[]float64, done *bool, value float64, h *float64) {
     if value <= *h {
       *list = append(*list, value)
       *done = true
-      fmt.Println(value)
     }
   }
 }

@@ -6,23 +6,23 @@ import (
   //"time"
 )
 
+type sortFunc
+func Print(name string, func sortFunc, list []float64, on bool) {
+  if on {
+    fmt.Println(name)
+    fmt.Println(sortfunc(list), "\n")
+  }
+}
+
 func main() {
   list1 := []float64{1,0,10,13,11,100,51,3,4}
   //list2 := []float64{1}
 
-  fmt.Println("BubbleSort")
-  a := sort.BubbleSort(list1)
-  fmt.Println(a, "\n")
+  Print("BubbleSort", sort.BubbleSort, list1, true)
 
-  fmt.Println("SleepSort")
-  b := sort.SleepSort(list1)
-  fmt.Println(b, "\n")
+  Print("SleepSort", sort.SleepSort, list1, true)
 
-  fmt.Println("ScanSort")
-  c := sort.ScanSort(list1)
-  fmt.Println(c, "\n")
+  Print("ScanSort", sort.ScanSort, list1, false)
 
-  fmt.Println("SpaghettiSort")
-  c := sort.SpaghettiSort(list1)
-  fmt.Println(c, "\n")
+  Print("SpaghettiSort", sort.SpaghettiSort, list1, false)
 }
