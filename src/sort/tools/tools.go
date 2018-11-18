@@ -4,6 +4,21 @@ import (
 
 )
 
+func Min(list []float64) float64 {
+  min := 0.0
+  for _, e := range list {
+    if e < min {min = e}
+  }
+  return min
+}
+
+func Max(list []float64) []float64 {
+  max := 0.0
+  for _, e := range list {
+    if e > max {max = e}
+  }
+  return max
+}
 
 func AllTrue(list []bool) bool {
   init := true

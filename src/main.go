@@ -18,6 +18,10 @@ func main() {
   b := sort.SleepSort(list1)
   fmt.Println(b, "\n")
 
+  fmt.Println("IncorrectSpaghettiSort")
+  c := sort.IncorrectSpaghettiSort(list1)
+  fmt.Println(c, "\n")
+
   fmt.Println("SpaghettiSort")
   c := sort.SpaghettiSort(list1)
   fmt.Println(c, "\n")
