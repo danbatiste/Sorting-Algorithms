@@ -18,18 +18,18 @@ func SleepSort(list []float64) []float64 {
   return tempList
 }
 
-//  TODO: Implement for negative numbers
+//  Only works for numbers above h
 //  Higher increment results in less accuracy, but faster compute time.
 //  Lower time results in faster compute time, but lesser accuracy.
 //  Time complexity should be in the family of O(1)
-func IncorrectSpaghettiSort(list []float64) []float64 {
+func ScanSort(list []float64) []float64 {
   tempList := []float64{}
   doneList := make([]bool, len(list))
   var h float64
   increment := 0.3
   h = 0
   for i, v := range list {
-    go tools.SpaghettiInsert(&tempList, &doneList[i], v, &h)
+    go tools.ScanInsert(&tempList, &doneList[i], v, &h)
   }
   for !tools.AllTrue(doneList) {
     time.Sleep(10*time.Millisecond)
@@ -38,6 +38,7 @@ func IncorrectSpaghettiSort(list []float64) []float64 {
   return tempList
 }
 
+//  Prepares a list (O(n)) and then moves down that list (O(1))
 func SpaghettiSort(list []float64) []float64 {
   tempList := []float64{}
   min, max := Min(list), Max(list)

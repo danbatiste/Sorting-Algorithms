@@ -8,7 +8,7 @@ import (
 
 //  Raises a line from 0 upwards. If a value is above the line,  it is added
 //  to the slice.
-func SpaghettiInsert(list *[]float64, done *bool, value float64, h *float64) {
+func ScanInsert(list *[]float64, done *bool, value float64, h *float64) {
   *done = false
   for !*done {
     if value <= *h {

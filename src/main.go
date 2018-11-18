@@ -18,8 +18,8 @@ func main() {
   b := sort.SleepSort(list1)
   fmt.Println(b, "\n")
 
-  fmt.Println("IncorrectSpaghettiSort")
-  c := sort.IncorrectSpaghettiSort(list1)
+  fmt.Println("ScanSort")
+  c := sort.ScanSort(list1)
   fmt.Println(c, "\n")
 
   fmt.Println("SpaghettiSort")
